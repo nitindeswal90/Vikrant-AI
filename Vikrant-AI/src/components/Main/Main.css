@@ -1,0 +1,267 @@
+.main {
+  flex: 1;
+  min-height: 100vh;
+  padding-bottom: 15vh;
+  position: relative;
+}
+.word-count-box {
+  text-align: right;
+  margin-top: 8px;
+  color: #888;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.search-box input:disabled {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  cursor: not-allowed;
+}
+
+.main .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  padding: 20px;
+  color: #585858;
+}
+
+.main .nav img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.main-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.main .greet {
+  margin: 30px 0px;
+  font-size: 46px;
+  color: #c4c7c5;
+  font-weight: 500;
+  padding: 20px;
+}
+
+.main .greet span {
+  background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.main .card {
+  height: 200px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.main .card img {
+  width: 35px;
+  padding: 5px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 20px;
+  bottom: 10px;
+  right: 10px;
+}
+
+.main .card p {
+  color: #585858;
+  font-size: 17px;
+}
+
+.main .card:hover {
+  background-color: #dfe4ea;
+}
+
+.main-bottom {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 0px 20px;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #f0f4f9;
+}
+
+.search-box img {
+  width: 24px;
+  cursor: pointer;
+}
+
+.search-box input {
+  width: 900px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 18px;
+  color: #585858;
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  .main .nav {
+    font-size: 16px;
+  }
+  .main .greet {
+    font-size: 30px;
+  }
+}
+
+.main .bottom-info {
+  font-size: 15px;
+  margin: 15 auto;
+  text-align: center;
+  font-weight: 300;
+}
+.result {
+  padding: 0%;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.result-title {
+  margin: 40px 0px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.result img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.result-data {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  /* background-color: #f0f4f9;*/
+}
+.loder-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 13vh;
+}
+
+.loder {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.loder hr {
+  width: 200px;
+  height: 4px;
+  border: none;
+  background-color: #ccc;
+  opacity: 0.5;
+  transition: background-color 0.5s ease, opacity 0.5s ease;
+}
+
+.loder hr:nth-child(1) {
+  animation: loadingEffect 2s ease-in-out infinite;
+}
+
+.loder hr:nth-child(2) {
+  animation: loadingEffect 2s ease-in-out 0.2s infinite;
+}
+
+.loder hr:nth-child(3) {
+  animation: loadingEffect 2s ease-in-out 0.4s infinite;
+}
+
+.loder hr:nth-child(4) {
+  animation: loadingEffect 2s ease-in-out 0.6s infinite;
+}
+
+@keyframes loadingEffect {
+  0% {
+    background-color: #ccc;
+    opacity: 0.5;
+    transform: translateX(0);
+  }
+  50% {
+    background-color: #3498db;
+    opacity: 1;
+    transform: translateX(20px);
+  }
+  100% {
+    background-color: #ccc;
+    opacity: 0.5;
+    transform: translateX(0);
+  }
+}
+
+.result-text {
+  font-family: "Arial", sans-serif; /* Same font family as my responses */
+  font-size: 1rem; /* Matching font size */
+  font-weight: 400; /* Normal weight for body text */
+  line-height: 1.8; /* Improve readability with good spacing */
+  color: #24292f; /* Slightly darker gray for a modern look */
+  background-color: #ffffff; /* Clean white background */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Light shadow for depth */
+  max-width: 100%;
+  margin: 10px auto;
+  word-wrap: break-word;
+}
+
+.result-text p {
+  margin: 10px 0;
+}
+
+.result-text strong {
+  font-weight: 500; /* Moderate weight for emphasis */
+  color: #0366d6; /* Darker blue for highlights */
+}
+@media (max-width: 600px) {
+  .result-text {
+    font-size: 14px;
+  }
+  .main-bottom input {
+    flex: none;
+    width: 150px;
+  }
+  .main-bottom img {
+    width: 20px;
+  }
+  .search-box {
+    padding: 5px 10px;
+  }
+  .search-box div {
+    gap: 5px;
+  }
+}
